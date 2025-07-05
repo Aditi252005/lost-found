@@ -116,7 +116,7 @@ app.get('/my-reports', isLoggedIn, async (req, res) => {
 
 // signup route
 app.get('/signup', (req, res) => {
-  res.render('signup');
+  res.render('signUp');
 });
 app.post('/signup', async (req, res) => {
   const { email, password } = req.body;
@@ -191,4 +191,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 
