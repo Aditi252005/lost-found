@@ -14,7 +14,11 @@ const { storage } = require('./config/cloudinary');
 const upload = multer({ storage });
 const flash = require('connect-flash');
 
-mongoose.connect('mongodb://localhost:27017/lostandfound')
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
@@ -182,5 +186,9 @@ app.get('/api/items', async (req, res) => {
 
 
 
-app.listen(3000, () => console.log('listning to port'));
+// app.listen(3000, () => console.log('listning to port'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
