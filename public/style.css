@@ -1,0 +1,52 @@
+body {
+  
+ background-color: rgb(253, 246, 246) !important;
+  margin: 20px;
+  background: #b8d9f9;
+}
+
+h1, h2 p{
+  text-align: center;
+}
+
+.navbar{
+  font-size: 20px !important;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
+}
+form {
+  max-width: 600px;
+  margin: 0 auto;
+ 
+}
+
+.card{
+  max-width: 400px !important;
+  max-height: 800px !important;
+}
+.card-effect {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-effect:hover {
+  opacity: 0.7;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.lost-form{
+  background-color: rgb(247, 242, 236) !important;
+}
+
+.found-form{
+  background-color: aliceblue;
+}
+
+.show-card{
+  max-width: 700px !important;
+}

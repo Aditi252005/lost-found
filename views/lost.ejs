@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Lost Item</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary sticky-top mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Lost & Found</a>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h2 class="mb-4">Report a Lost Item</h2>
+
+  <form action="/submit" method="POST" enctype="multipart/form-data" class="border p-4 rounded shadow-sm lost-form">
+    <input type="hidden" name="type" value="lost">
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Item Title</label>
+      <input type="text" name="title" id="title" class="form-control" placeholder="e.g. Wallet" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea name="description" id="description" class="form-control" rows="3" placeholder="Describe the item..." required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="date" class="form-label">Date Lost</label>
+      <input type="date" name="date" id="date" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" name="location" id="location" class="form-control" placeholder="Where was it lost?" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="contact" class="form-label">Your Contact Info</label>
+      <input type="text" name="contact" id="contact" class="form-control" placeholder="Phone / Email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Upload Image (optional)</label>
+      <input type="file" name="image" id="image" class="form-control">
+    </div>
+
+      
+    <!-- Image preview -->
+    <div class="text-center mb-3">
+      <img id="preview" src="#" alt="Image Preview" class="img-thumbnail" style="display:none; max-width: 250px;">
+    </div>
+
+    
+      <div class="d-grid gap-2 d-md-block text-center">
+        <button type="submit" class="btn btn-danger">Submit Lost Report</button>
+      </div>
+  </form>
+      <div class="text-center mt-3">
+        <a href="/" class="btn btn-outline-secondary">Back to Home</a>
+      </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
